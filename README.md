@@ -1,12 +1,12 @@
 # CPOO-java
 
-Repository containing code about the course of Object-Oriented Programmation
+Repository containing code about the course of Object-Oriented Programmation and some other Java Stuff
 
 
-## Demande au prof:
-Makefile pour java?
+## Questions
+Makefile for java?
 
-## Dans library
-Faire un dictionnaire avec tous les livres disponibles. Paire Clé(ISBN) ~ Book
+## TODO
+* Dictionnary for ISBN ~ Book
+=> create book then add it to dict?
 
-Cela implique de créer le livre puis de l'ajouter au dictionnaire. 
