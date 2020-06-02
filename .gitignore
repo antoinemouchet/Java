@@ -6,3 +6,4 @@ out
 .project
 *.iml
 .DS_STORE
+*.class
