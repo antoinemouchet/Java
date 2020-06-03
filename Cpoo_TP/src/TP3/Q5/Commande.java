@@ -1,5 +1,9 @@
 package TP3.Q5;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+
 /**
  * @overview Une commande représente un ensemble de DetailCommande.
  * Une commande est mutable.
@@ -8,16 +12,13 @@ package TP3.Q5;
  */
 public class Commande {
 
-    private DetailCommande[] commande;
-    private int nbDetails;
+    private ArrayList<DetailCommande> commande;
 
     /**
-     * @effects Initializes this by creating an array for nbDetails of DetailCommande.
-     * this.nbDetails = nbDetails
+     * @effects Initializes this by creating an array for  DetailCommande.
      */
-    public Commande(int nbDetails){
-        commande = new DetailCommande[nbDetails];
-        this.nbDetails = nbDetails;
+    public Commande(){
+        commande = new ArrayList<>();
     }
 
     /**
@@ -25,12 +26,7 @@ public class Commande {
      * @effects this_post.Commande = this.Commande U {d}
      */
     public void insert(DetailCommande d){
-        for (int i = 0; i < commande.length; i++) {
-            if(commande[i] == null){
-                commande[i] = new DetailCommande(d);
-                return;
-            }
-        }
+        commande.add(new DetailCommande(d));
     }
 
     /**
@@ -38,11 +34,9 @@ public class Commande {
      * @effects this_post.Commande = this.Commande \ {d} (every occurrences)
      */
     public void remove(DetailCommande d){
-        for (int i = 0; i < commande.length; i++) {
-            if(commande[i] != null){
-                if(commande[i].equals(d)){
-                    commande[i] = null;
-                }
+        for (int i = 0; i < commande.size(); i++) {
+            if(commande.get(i).similar(d)){
+                commande.remove(i);
             }
         }
     }
@@ -53,11 +47,9 @@ public class Commande {
      * replaced by newD.
      */
     public void update(DetailCommande currentD, DetailCommande newD){
-        for (int i = 0; i < commande.length; i++) {
-            if(commande[i] != null){
-                if(commande[i].equals(currentD)){
-                    commande[i] = new DetailCommande(newD);
-                }
+        for (int i = 0; i < commande.size(); i++) {
+            if(commande.get(i).similar(currentD)){
+                commande.set(i, new DetailCommande(newD));
             }
         }
     }
@@ -68,17 +60,45 @@ public class Commande {
      * de manière à ne pas exposer la rep.
      */
     public DetailCommande[] listContent(){
-        DetailCommande[] content = new DetailCommande[nbDetails];
+        DetailCommande[] content = new DetailCommande[commande.size()];
 
+        int index = 0;
         // Create new DetailCommande for every DetailCommande in this.commande
         // in order to protect the rep.
-        for (int i = 0; i < commande.length; i++) {
-            if(commande[i] != null){
-                content[i] = new DetailCommande(commande[i]);
-            }
+        for (DetailCommande d:commande) {
+            content[index] = new DetailCommande(d);
+            index++;
         }
 
         return content;
     }
 
+    /**
+     * @requires c != null
+     * @return true if c is similar to this, false otherwise
+     */
+    public boolean similar(Commande c){
+        DetailCommande[] contentC = c.listContent();
+        int index = 0;
+
+        for (DetailCommande d: commande) {
+            if(!contentC[index].similar(d)){
+                return false;
+            }
+            index++;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Commande:");
+
+        for (DetailCommande d:commande) {
+            sb.append(d.toString());
+        }
+
+        return sb.toString();
+    }
 }

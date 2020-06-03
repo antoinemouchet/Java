@@ -10,16 +10,19 @@ package TP3.Q2;
 public interface ImmuMultiSet {
 
     /**
+    * @requires x an integer
     * @return a new ImmuMultiSet equivalent to this U {x}
     */
     public ImmuMultiSet insert(int x);
 
     /**
+     * @requires x an integer
      * @return a new ImmuMultiSet equivalent to this \ {x} (every occurrences)
      */
     public ImmuMultiSet delete(int x);
 
     /**
+     * @requires x an integer
      * @return true if x inside this, false otherwise
      */
     public boolean isIn(int x);

@@ -76,7 +76,7 @@ public class Piece {
         for (Bloc b: blocs) {
             // Si le y du bloc est inférieur au y de la colonne correspondante
             // Update y de la colonne dans la jupe
-            if(b.getY() < jupe[b.getX()]){
+            if(b.getY() < jupe[b.getX() % jupe.length]){
                 jupe[b.getX()] = b.getY();
             }
         }
@@ -89,8 +89,6 @@ public class Piece {
                 "blocs=" + Arrays.toString(blocs) +
                 '}';
     }
-
-
 
     public boolean repOK(){
         if (blocs == null)return false;

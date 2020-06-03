@@ -17,7 +17,7 @@ public class IntSet2 {
     private List<Integer> els;
 
     /**
-     * FA(c): {c.els[i].intValue | 0 <= i < c.els.size()}
+     * FA(c): {c.els.get(i) | 0 <= i < c.els.size()}
      */
 
     /**

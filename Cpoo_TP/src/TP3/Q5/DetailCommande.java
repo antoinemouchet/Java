@@ -87,18 +87,20 @@ public class DetailCommande {
         return quantity;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DetailCommande that = (DetailCommande) o;
-        return Float.compare(that.price, price) == 0 &&
-                quantity == that.quantity &&
-                Objects.equals(article, that.article);
+    public boolean similar(DetailCommande d){
+        if(!article.equals(d.getArticle())) return false;
+        if(price != d.getPrice()) return false;
+        if(quantity != d.getQuantity()) return false;
+
+        return true;
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(article, price, quantity);
+    public String toString() {
+        return "DetailCommande{" +
+                "article=" + article +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
     }
 }

@@ -19,7 +19,7 @@ public class IntSet3 {
     private int sz;
 
     /**
-     * FA(c): {c.otherEls[i].intValue | 0 <= i < c.otherEls.size()}
+     * FA(c): {c.otherEls.get(i) | 0 <= i < c.otherEls.size()}
      * &&
      * {j | 0 <= j < 100 && c.els[j]}
      */

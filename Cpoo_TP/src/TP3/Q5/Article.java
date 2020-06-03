@@ -1,5 +1,8 @@
 package TP3.Q5;
 
+import java.sql.PreparedStatement;
+import java.util.Objects;
+
 /**
  * Un article est un objet de type immutable. Il est composé d'un nom et d'un numéro de série.
  * <x, y> tel que
@@ -32,5 +35,31 @@ public class Article {
      */
     public int getSerialNumber() {
         return serialNumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Article article = (Article) o;
+        return serialNumber == article.serialNumber &&
+                Objects.equals(name, article.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + name.hashCode();
+        result = 31 * result + serialNumber;
+
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "name='" + name + '\'' +
+                ", serialNumber=" + serialNumber +
+                '}';
     }
 }
