@@ -35,8 +35,8 @@ public class PersistentSet extends Set{
      * @return le PersistentSet sauvegarde dans f.
      * Si f ne contient pas un PersistentSet retourne null.
      */
-    public static Set load(File f){
+    /*public static Set load(File f){
 
-    }
+    }*/
 }
 

@@ -15,6 +15,14 @@ public class Article {
     private final int serialNumber;
 
     /**
+     * FA(c): <c.name, c.serialNumber>
+     */
+
+    /**
+     * IR(c): name != null && serialNumber > 0
+     */
+
+    /**
      * @effects Initializes a new article with
      * this.name = name and this.serialNumber = serialNumber
      */

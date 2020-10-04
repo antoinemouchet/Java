@@ -15,7 +15,7 @@ public class Piece {
     /**
      * FA(c): { FA'(c.blocs[i]) | 0 <= i < c.blocs.length} (ensemble des blocs d'une pièce)
      *
-     * où FA'(b) = (b.x, b.y) (Coordonnées de la pièce dans le plan relatif à c.
+     * où FA'(b) = (b.x, b.y) (Coordonnées de la pièce dans le plan relatif à c).
      */
 
     /**

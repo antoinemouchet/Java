@@ -3,6 +3,8 @@ package TP3.Q1;
 import Exceptions.NegativeArgumentException;
 import Exceptions.NotFoundException;
 
+import java.util.ArrayList;
+
 public class Methods {
     /**
     * @requires n and d positive integers

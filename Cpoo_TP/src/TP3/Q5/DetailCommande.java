@@ -21,6 +21,17 @@ public class DetailCommande {
     private int quantity;
 
     /**
+     * FA(c): <FA'(c.article), c.price, c.quantity>
+     *
+     *     où FA'(b) = <b.name, b.serialNumber>
+     */
+
+    /**
+     * IR(c): article != null && price >= 0 && quantity > 0 
+     */
+
+
+    /**
      * @effects Initialise un DetailCommande avec this.article = article
      * this.price = price et this.quantity = quantity
      */

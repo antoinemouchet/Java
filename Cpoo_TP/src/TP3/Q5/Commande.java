@@ -15,6 +15,19 @@ public class Commande {
     private ArrayList<DetailCommande> commande;
 
     /**
+     * FA(c): {FA'(c.commande.get(i) | 0 <= i < commande.size()}
+     *
+     * FA'(b) = <FA''(b.article), b.price, b.quantity>
+     * FA''(a) = <a.name, a.serialNumber>
+     */
+
+    /**
+     * IR(c): c.commande != null && c.commande.size() > 0 &&
+     * for all detailCommande in c.commande: detailCommande != null
+     */
+
+
+    /**
      * @effects Initializes this by creating an array for  DetailCommande.
      */
     public Commande(){
@@ -44,7 +57,7 @@ public class Commande {
     /**
      * @modifies this.Commande
      * @effects this_post.Commande = this.Commande with every occurrences of currentD
-     * replaced by newD.
+     * replaced by newD
      */
     public void update(DetailCommande currentD, DetailCommande newD){
         for (int i = 0; i < commande.size(); i++) {
