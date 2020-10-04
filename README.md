@@ -1,3 +1,3 @@
-# CPOO-java
+# Java
 
-Repository containing code about the course of Object-Oriented Programmation and some other Java Stuff
+Repository containing code about the course of Object-Oriented Programmation and Algorithmics
